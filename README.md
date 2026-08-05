@@ -121,8 +121,8 @@ contribution ranking.
 | Name | Gender | Age | Affiliation |
 | --- | --- | ---: | --- |
 | Junyan Guo | Male | 23 | Jiangsu Normal University |
-| Min Qiu | Female | 53 | Suining Chess Academy |
-| Youxiang Li | Male | 53 | Jiangsu Suining Liji Senior High School |
+| Min Qiu | Female | 53 | Suining Go Academy |
+| Youxiang Li | Male | 53 | Jiangsu Liji High School |
 | Hang Li | Female | 28 | Durr (Shanghai) |
 | Chentian Wei | Male | 25 | Tsinghua University |
 | Tingjia Zhang | Male | 24 | Shanghai Jiao Tong University |
