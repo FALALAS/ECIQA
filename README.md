@@ -129,10 +129,11 @@ contribution ranking.
 | Yiqi Li | Male | 26 | Xidian University |
 | Youxiang Li | Male | 53 | Jiangsu Liji High School |
 | Min Qiu | Female | 53 | Suining Go Academy |
-| Ruiao Tang | Male | 24 | Nanjing University Of Finance & Economics |
+| Ruiao Tang | Male | 24 | Nanjing University of Finance & Economics |
 | Zhengyang Wang | Female | 23 | Xidian University |
 | Chentian Wei | Male | 25 | Tsinghua University |
 | Ping Wu | Female | 25 | Xi'an Jiaotong University |
+| Le Zhang | Female | 23 | Huawei (Edinburgh) |
 | Tingjia Zhang | Male | 24 | Shanghai Jiao Tong University |
 | Xin Zhang | Male | 25 | Nanjing Customs |
 | Zijun Zhang | Male | 24 | Air Force Engineering University |
