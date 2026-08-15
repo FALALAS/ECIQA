@@ -124,11 +124,13 @@ contribution ranking.
 | Yishan Chen | Female | 23 | Xidian University |
 | Junyan Guo | Male | 23 | Jiangsu Normal University |
 | Zihan Jia | Female | 25 | Bayer (Shanghai) |
+| Zhiming Jiang | Male | 24 | Xidian University |
 | Yuantao Ju | Male | 25 | Shanghai Customs |
 | Hang Li | Female | 28 | Durr (Shanghai) |
 | Yiqi Li | Male | 26 | Xidian University |
 | Youxiang Li | Male | 53 | Jiangsu Liji High School |
 | Min Qiu | Female | 53 | Suining Go Academy |
+| Jiawei Sun | Male | 21 | Xidian University |
 | Ruiao Tang | Male | 24 | Nanjing University of Finance & Economics |
 | Zhengyang Wang | Female | 23 | Xidian University |
 | Chentian Wei | Male | 25 | Tsinghua University |
@@ -136,7 +138,10 @@ contribution ranking.
 | Le Zhang | Female | 23 | Huawei (Edinburgh) |
 | Tingjia Zhang | Male | 24 | Shanghai Jiao Tong University |
 | Xin Zhang | Male | 25 | Nanjing Customs |
+| Yapeng Zhang | Male | 25 | Xidian University |
+| Yongchuan Zhang | Male | 24 | Xidian University |
 | Zijun Zhang | Male | 24 | Air Force Engineering University |
+| Jingzhu Zheng | Male | 25 | Xidian University |
 
 
 
