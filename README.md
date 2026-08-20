@@ -127,8 +127,10 @@ contribution ranking.
 | Zhiming Jiang | Male | 24 | Xidian University |
 | Yuantao Ju | Male | 25 | Shanghai Customs |
 | Hang Li | Female | 28 | Durr (Shanghai) |
+| Jicai Li | Male | 24 | Xidian University |
 | Yiqi Li | Male | 26 | Xidian University |
 | Youxiang Li | Male | 53 | Jiangsu Liji High School |
+| Mengzu Liu | Male | 27 | Xidian University |
 | Min Qiu | Female | 53 | Suining Go Academy |
 | Jiawei Sun | Male | 21 | Xidian University |
 | Ruiao Tang | Male | 24 | Nanjing University of Finance & Economics |
