@@ -122,6 +122,7 @@ contribution ranking.
 | --- | --- | ---: | --- |
 | Jinghao Bian | Male | 26 | Xidian University |
 | Yishan Chen | Female | 23 | Xidian University |
+| Bihui Cheng | Male | 23 | Xidian University |
 | Junyan Guo | Male | 23 | Jiangsu Normal University |
 | Zihan Jia | Female | 25 | Bayer (Shanghai) |
 | Zhiming Jiang | Male | 24 | Xidian University |
