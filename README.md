@@ -134,6 +134,7 @@ contribution ranking.
 | Mengzu Liu | Male | 27 | Xidian University |
 | Min Qiu | Female | 53 | Suining Go Academy |
 | Jiawei Sun | Male | 21 | Xidian University |
+| Yujia Sun | Female | 31 | Xidian University |
 | Ruiao Tang | Male | 24 | Nanjing University of Finance & Economics |
 | Zhengyang Wang | Female | 23 | Xidian University |
 | Chentian Wei | Male | 25 | Tsinghua University |
