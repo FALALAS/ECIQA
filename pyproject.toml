@@ -16,6 +16,3 @@ eciqa-score = "eciqa.infer:main"
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["eciqa*"]
-
-[tool.setuptools.package-data]
-eciqa = ["vendor/LICENSE*"]

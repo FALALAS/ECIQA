@@ -194,16 +194,6 @@
       "sha256": "a644daf7a2ca82ae7db7bbbf1e1417db0c776d85c1a9e9081c00b74b4a75a3ba"
     },
     {
-      "path": "eciqa/vendor/LICENSE_OpenAI_CLIP",
-      "bytes": 1064,
-      "sha256": "987e63b32f6c89ff5160e429458a872ff048e6860b590a3912e938f9da8f14db"
-    },
-    {
-      "path": "eciqa/vendor/LICENSE_Restormer.md",
-      "bytes": 1090,
-      "sha256": "2b93776512924bc095ec5d97a79d76cf1ab401ae641d1ae1f46e94f1c53a2e59"
-    },
-    {
       "path": "eciqa/vendor/restormer_arch.py",
       "bytes": 11428,
       "sha256": "3be243fa3c8e2cb2c9459eeac062b04d6084dbcc328292dae1c3e52ba6f7434a"
@@ -215,8 +205,8 @@
     },
     {
       "path": "pyproject.toml",
-      "bytes": 532,
-      "sha256": "69f54400a314a0aea73e7846459ff70387828f55e46dfd8ca2fc1b1a2517edfb"
+      "bytes": 472,
+      "sha256": "7ea2b0477beef35131c7293dd5d578001c39a0fdf68438f6b27cae85c08cfd4b"
     },
     {
       "path": "README.md",
@@ -237,11 +227,6 @@
       "path": "tests/test_contract.py",
       "bytes": 3398,
       "sha256": "ea24192bb5f6655652343bbab3dd3970e63a6341839968794c83634f0569677e"
-    },
-    {
-      "path": "THIRD_PARTY_NOTICES.md",
-      "bytes": 3663,
-      "sha256": "703bc44a763d62bd1c2c48ee4f842229ad98c94cab3fa558a740d1cd95416fdb"
     },
     {
       "path": "weights/checksums.json",
