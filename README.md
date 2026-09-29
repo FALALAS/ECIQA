@@ -1,115 +1,132 @@
-# ECIQA
+# Beyond Ground-Truth Fidelity: Rethinking Exposure Correction through Input-Conditioned Perceptual Evaluation
 
-**Exposure Correction Image Quality Assessment Dataset**
+**Ao Li, Zhenyu Wang<sup>†</sup>, Aobo Li, Tao Huang, Yufan Zhu, Fangfang Wu, Jinjian Wu, Weisheng Dong<sup>†</sup>**
 
-> **Project status:** ECIQA is under active construction. Image organization,
-> subjective annotation, quality control, and score aggregation are still in
-> progress. The dataset is not yet available for download, and the current raw
-> annotations should not be treated as finalized mean opinion score (MOS)
-> labels.
+Xidian University
 
-## Overview
+<sup>†</sup> Corresponding authors.
 
-ECIQA is a large-scale subjective image quality dataset for evaluating exposure
-correction results. It is designed to capture how human observers judge the
-perceptual quality of corrected images, including overall exposure, local
-visibility, color fidelity, contrast, naturalness, and correction artifacts.
+Official repository for **ECIQA** and **ECIQA-Pref**.
 
-The current protocol collects pairwise preferences instead of asking annotators
-to assign an isolated numerical score. Each judgment compares an original input
-with two corrected candidates. The resulting preferences will be checked,
-aggregated, and calibrated before the final quality scores and benchmark splits
-are released.
+We study exposure correction through perceptual evaluation conditioned on the original input. This repository provides ECIQA-Pref, a dataset of human preferences for exposure correction, and ECIQA, a model that assesses a corrected image together with its degraded input.
 
+## Installation
 
+Use Python 3.10 or later and install a PyTorch build suitable for your device.
 
-## Annotation Protocol
-
-Each trial displays three images:
-
-1. the original input;
-2. Candidate A; and
-3. Candidate B.
-
-The annotator completes all three pairwise comparisons:
-
-- Input versus Candidate A
-- Input versus Candidate B
-- Candidate A versus Candidate B
-
-For every comparison, the annotator may select the left image, the right image,
-or `Similar`. The tool derives a ranking with possible ties, such as
-`Input>A=B`. A trial cannot be saved if the three choices form a cyclic or
-logically inconsistent preference.
-
-The interface provides synchronized local magnification across all three images
-to support inspection of details at the same relative position. Candidate
-left/right placement is reproducibly varied to reduce position bias.
-
-## Coverage and Sampling
-
-Annotation progress is stored in five independent coverage layers, Group A
-through Group E. These groups are coverage layers rather than five fixed
-annotators. The target is for each canonical candidate pair to receive one
-independent judgment in every layer. Annotators retain a stable expert ID and
-assigned group, while completed pair IDs are skipped automatically.
-
-The internal tool currently supports four sampling modes:
-
-- `Compact`: uses a curated set of candidate-pair families for each source
-  dataset.
-- `Unseen`: prioritizes MSEC scenes with no result in any coverage layer and
-  always includes the color-corrected CoTF candidate.
-- `All pairs`: enumerates every pair of candidate outputs available in a scene.
-- `Marked only`: restores a manually marked review queue.
-
-The `Unseen` opponent is selected reproducibly from the remaining candidate
-methods using the seed and scene ID. SICEV2 is not included in this mode because
-it does not contain the corresponding color-corrected candidate.
-
-## Recorded Annotation Fields
-
-The raw annotation tables currently retain:
-
-- expert ID and coverage group;
-- canonical pair ID, trial ID, dataset, and scene ID;
-- input and candidate method identifiers;
-- relative image paths;
-- all three pairwise decisions;
-- the automatically derived ranking;
-- annotation duration; and
-- completion timestamp.
-
-The release version will document any observer filtering, consistency metrics,
-preference aggregation method, and transformation from raw judgments to the
-published quality scores.
-
-## Internal Working Layout
-
-The active annotation bundle is organized as follows. Raw images and annotations
-are maintained outside this Git repository while construction is ongoing.
-
-```text
-MSEC_SICEV2_MOS/
-|-- scenes/                       # Scene-oriented image bundle
-|-- mos_label_tool/               # Static browser annotation tool
-|-- working_folder/
-|   |-- group_A.csv
-|   |-- group_B.csv
-|   |-- group_C.csv
-|   |-- group_D.csv
-|   |-- group_E.csv
-|   `-- marked_comparisons.csv
-|-- scene_manifest.csv
-|-- candidate_manifest.csv
-`-- organization_summary.json
+```bash
+git clone https://github.com/FALALAS/ECIQA.git
+cd ECIQA
+python -m pip install -e .
 ```
 
-The two manifests describe scene membership, method identity, item type,
-display order, dimensions, and file locations. The group CSV files are the raw
-handoff and aggregation records used during annotation.
+## Dataset and pretrained models
 
+ECIQA-Pref contains **5,200 images from 1,040 exposure instances**. Each instance includes an original input and four corrected images. The preference labels describe relative quality within each exposure instance.
 
+Download **ECIQA-assets** (dataset images and pretrained weights) from [Baidu Netdisk](https://pan.baidu.com/s/13V898VOabdk6LJrmFmsxVw?pwd=ng41). Extraction code: `ng41`.
+
+After downloading the images and pretrained weights, place the complete `scenes/` folder in `data/ECIQA-Pref/` and both checkpoint `.pt` files directly in `weights/`. All paths below are relative to the repository root. The manifest and split files are already included in the repository.
+
+If the downloaded bundle contains `data/` and `weights/` folders, merge them into the repository root. Keep the scene subfolders and filenames unchanged, without adding an extra directory level.
+
+```text
+data/ECIQA-Pref/
+├── scenes/          # Original inputs and corrected images
+├── manifest.csv     # Image paths, preference labels, and splits
+└── splits/          # Training and test manifests
+
+weights/
+├── eciqa_baseline_epoch015.pt  # ECIQA checkpoint for inference
+└── eciqa_stage2_init.pt        # Initialization for training
+```
+
+The provided split contains 4,160 training images and 1,040 test images. Splitting is by exposure instance; 84 underlying source-content groups occur in both partitions.
+
+The manifest keeps 12 fields used by training, evaluation, annotation, and split checks:
+
+| Fields | Purpose |
+|---|---|
+| `image_id` | Unique image identifier |
+| `scene_id`, `content_id` | Exposure instance and underlying source content |
+| `relative_path`, `input_relative_path` | Candidate and original input paths |
+| `split`, `elo_scene_0_100` | Partition and scene-relative preference target |
+| `dataset`, `method` | Source dataset and candidate identity for annotation |
+| `width`, `height` | Image dimensions for the annotation layout |
+| `exposure` | Underexposure/overexposure grouping for evaluation |
+
+After placing the downloaded files, verify them with `python scripts/verify_assets.py`.
+
+## Inference
+
+Evaluate a corrected image using its original input:
+
+```bash
+python -m eciqa.infer \
+  --weights weights/eciqa_baseline_epoch015.pt \
+  --source input.png \
+  --candidate corrected.png \
+  --device cuda:0 --output score.json
+```
+
+`source` is the original degraded input and `candidate` is the image to evaluate. A higher `score_0_100` indicates better predicted quality. The score reflects learned scene-relative preferences rather than globally calibrated MOS.
+
+Use `--device cpu` for CPU inference. Add `--view-chunk 1 --cross-query-chunk 512` to reduce GPU memory use.
+
+## Training
+
+Train on ECIQA-Pref from the supplied initialization:
+
+```bash
+python -m eciqa.train \
+  --init-weights weights/eciqa_stage2_init.pt \
+  --config configs/baseline.json \
+  --manifest data/ECIQA-Pref/manifest.csv \
+  --project-root data/ECIQA-Pref \
+  --output-dir runs/eciqa --selection-split test \
+  --device cuda:0 --precision auto --workers 4 \
+  --stop-after-epoch 15
+```
+
+This reproduces the selected epoch within the original 100-epoch schedule. Omit `--stop-after-epoch 15` to complete all 100 epochs. The supplied checkpoint protocol uses the test split for selection; use a separate validation split and `--selection-split val` for new experiments.
+
+## Evaluation
+
+```bash
+python -m eciqa.evaluate \
+  --weights weights/eciqa_baseline_epoch015.pt \
+  --manifest data/ECIQA-Pref/manifest.csv \
+  --project-root data/ECIQA-Pref \
+  --output-dir evaluation/eciqa --split test \
+  --device cuda:0 --precision fp32
+```
+
+Evaluation reports SRCC and PLCC for underexposure, overexposure, and the overall test set.
+
+## Annotation tool
+
+The browser-based tool displays the original input and two corrected candidates for pairwise preference annotation. It supports ties, synchronized local magnification, randomized candidate order, progress recovery, CSV/JSON export, and a separate review page.
+
+Start the tool from the repository root; it uses only the Python standard library:
+
+```bash
+python annotation_tool/serve.py
+```
+
+Open **http://127.0.0.1:8010** in Chrome or Edge. The tool loads the images from `data/ECIQA-Pref/`.
+
+1. Enter an annotator ID, select a Group (A–E), and click **Choose Folder** to choose a local results folder.
+2. Select a pair mode and click **Start**. `Compact` uses the original candidate-pair selection; `All pairs` includes every pair of corrected candidates.
+3. Compare Input vs A, Input vs B, and A vs B, then click **Save & Next**. Inconsistent rankings must be corrected before saving.
+4. Use **Export CSV/JSON** to export the session, or **Open review tool** to review saved annotations from the same results folder.
+
+Annotations are saved locally as `group_A.csv` through `group_E.csv`; review edits are stored separately in `group_*_reviewed.csv`. Groups represent independent coverage layers. Use a stable annotator ID and keep the results folder to resume work; avoid simultaneous writes to the same folder. No annotations are uploaded by the tool.
+
+To use your own image collection, supply a manifest with `dataset`, `scene_id`, `method`, `relative_path`, `input_relative_path`, `width`, and `height` columns. Include one row with `method=input` and at least two corrected candidates per scene. Paths are relative to the image directory; preference labels are not required:
+
+```bash
+python annotation_tool/serve.py --manifest path/to/manifest.csv --data-root path/to/images
+```
 
 ## Acknowledgements
 
@@ -146,9 +163,3 @@ contribution ranking.
 | Yongchuan Zhang | Male | 24 | Xidian University |
 | Zijun Zhang | Male | 24 | Air Force Engineering University |
 | Jingzhu Zheng | Male | 25 | Xidian University |
-
-
-
-## Citation
-
-A formal citation will be provided with the first public dataset release.

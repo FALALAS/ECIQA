@@ -1,0 +1,6 @@
+# Install the PyTorch build appropriate for your system first.
+torch>=2.0
+numpy>=1.23
+Pillow>=9.1
+einops>=0.6
+scipy>=1.9

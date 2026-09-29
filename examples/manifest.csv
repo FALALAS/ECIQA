@@ -1,0 +1,7 @@
+image_id,relative_path,input_relative_path,scene_id,content_id,exposure,split,elo_scene_0_100
+example_train_input,train/input.png,train/input.png,train_under,content_train,under,train,0
+example_train_output,train/output.png,train/input.png,train_under,content_train,under,train,75
+example_val_input,val/input.png,val/input.png,val_over,content_val,over,val,0
+example_val_output,val/output.png,val/input.png,val_over,content_val,over,val,80
+example_test_input,test/input.png,test/input.png,test_under,content_test,under,test,0
+example_test_output,test/output.png,test/input.png,test_under,content_test,under,test,85

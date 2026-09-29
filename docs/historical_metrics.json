@@ -1,0 +1,29 @@
+{
+  "model_id": "q60_joint_tile4_no_global_ce",
+  "epoch": 15,
+  "source": "Archived epoch-15 predictions, rechecked before release preparation; not rerun here.",
+  "metrics": {
+    "Under": {
+      "count": 520,
+      "srcc": 0.6711861096369798,
+      "plcc": 0.8966567247899356,
+      "plcc_mapping": "none_raw_pearson"
+    },
+    "Over": {
+      "count": 520,
+      "srcc": 0.6195383884398894,
+      "plcc": 0.7386787784791888,
+      "plcc_mapping": "none_raw_pearson"
+    },
+    "Overall": {
+      "count": 1040,
+      "srcc": 0.6481997398513886,
+      "plcc": 0.8168734345596812,
+      "plcc_mapping": "none_raw_pearson"
+    }
+  },
+  "test_selected": true,
+  "train_test_content_overlap": 84,
+  "score_semantics": "scene-relative preference",
+  "plcc_mapping": "none_raw_pearson"
+}

@@ -1,0 +1,32 @@
+{
+  "model_id": "q60_joint_tile4_no_global_ce",
+  "selected_epoch": 15,
+  "original_checkpoint_sha256": "b0eb4ef9a05561be202bd3cca404f3d90b516bb92320e84259b235320fb42221",
+  "training_budget": 100,
+  "scheduler_epochs": 100,
+  "initialization_seed": 2024,
+  "initial_weight_sha256": {
+    "clip_weights": "5806e77cd80f8b59890b7e101eabd078d9fb84e6937f9e85e4ecb61988df416f",
+    "meta_weights": "b8ceb42ddbd9b6401b5a0a88ee389c989de317a9579c958c78125c580f37260d",
+    "qmap_checkpoint": "9d40cba4446e221138fcc0c08df326d954ba3feeddbb60f0fb5005bc19f51502"
+  },
+  "initialization_note": "Full original constructor state with CPU/Python/NumPy post-construction RNG, before any ECIQA update.",
+  "original_source_sha256": {
+    "experiment/train.py": "fe347789524bd9a298aa4df25054cfb7a916d7342c2abef45592bab994825310",
+    "experiment/model.py": "73b23c35b1b59370a49a829c7153699a61ebd2f4ad58072e010f610839088105",
+    "experiment/components.py": "ea0285271d5c03fd76128629386f96393cf50bdd11ab26cf6a82718c271e69d9",
+    "experiment/data.py": "db8c5647ebed293e3f501832314b1ce51fb99ce845627d3ef6574c5ad2cf12b1",
+    "metric_support/train_grmpiqa_official_finetune.py": "681c60ede6a076457bee21192daacab70487d75eb25843e5b692b2edf800e320",
+    "metric_support/extract_qmap_structure_features.py": "bf3654058963a8695b563de0d17b7bf10335eb14bb379d9eb7a85560cbdb45b1",
+    "grmp/CLIP/__init__.py": "d7930eb290ebed432116795c91473200d098451a94c0aedd4ae0f934f97955e8",
+    "grmp/CLIP/clip.py": "94e668d2543d8516ec4f84a71bea1c231288aa8de965468a6e4b89fe648e2d7b",
+    "grmp/CLIP/clip_ori.py": "9f518225c5891ba1413bfb0ae558ced795dbe44dbd848929be4b6af8277c38a7",
+    "grmp/CLIP/model.py": "3bace207ef4a9da9a4b2b3e483c5235807bcc7e77745629671f88d6653eaf281",
+    "grmp/CLIP/model_ori.py": "c0ba5cb62eafbf21e6c4e861e9caf6933d1c7e82313d37f953cd2c1ae85f78de",
+    "grmp/CLIP/simple_tokenizer.py": "d1b09f10ed3d1e2c343619cb98cbfacb92363dd8607526a43aa7fe2d60d15bad",
+    "qmap/restormer_arch.py": "3be243fa3c8e2cb2c9459eeac062b04d6084dbcc328292dae1c3e52ba6f7434a"
+  },
+  "total_parameters": 151835602,
+  "trainable_parameters": 2116433,
+  "training_manifest_sha256": "6850b5d4c1fc5f4ad92d7a2e7e1b32f8411ceb632655a779a5b5d64d14845af0"
+}

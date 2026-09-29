@@ -1,0 +1,195 @@
+{
+  "checked_at_utc": "2026-09-29T00:24:06.625287+00:00",
+  "status": "passed",
+  "repository_origin": "https://github.com/FALALAS/ECIQA.git",
+  "base_commit": "191eddcc8116d00e4ff40e9060c6bf5d6a2bae00",
+  "model_id": "q60_joint_tile4_no_global_ce",
+  "selected_epoch": 15,
+  "runtime": {
+    "python": "3.11.14 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 18:30:03) [MSC v.1929 64 bit (AMD64)]",
+    "torch": "2.7.1+cu118",
+    "numpy": "1.26.4",
+    "pillow": "12.1.0",
+    "scipy": "1.17.0",
+    "einops": "0.8.2"
+  },
+  "code_checks": {
+    "runtime": {
+      "passed": true,
+      "returncode": 0
+    },
+    "contract_tests": {
+      "passed": true,
+      "returncode": 0
+    },
+    "cli_infer_help": {
+      "passed": true,
+      "returncode": 0
+    },
+    "cli_train_help": {
+      "passed": true,
+      "returncode": 0
+    },
+    "cli_evaluate_help": {
+      "passed": true,
+      "returncode": 0
+    }
+  },
+  "contract_tests_passed": 6,
+  "asset_checks": {
+    "checked_at_utc": "2026-09-29T00:19:33.815535+00:00",
+    "status": "passed",
+    "weights": 2,
+    "image_files": 5200,
+    "exposure_instances": 1040,
+    "split_counts": {
+      "train": 4160,
+      "test": 1040
+    },
+    "source_content_overlap": 84,
+    "manifest_sha256": "2146c9e65bc91aee1c47e0f9a7575737f09402a8776d1fe23d5e5a6dd9e00213",
+    "verified_bytes": 4704020633,
+    "errors": []
+  },
+  "data_contract": {
+    "original_manifest_sha256": "6850b5d4c1fc5f4ad92d7a2e7e1b32f8411ceb632655a779a5b5d64d14845af0",
+    "portable_manifest_sha256": "2146c9e65bc91aee1c47e0f9a7575737f09402a8776d1fe23d5e5a6dd9e00213",
+    "labels_row_order_and_splits_preserved": true,
+    "images_match_frozen_training_inventory": 5200,
+    "images_match_current_training_server": 5200,
+    "private_path_fields_removed": [
+      "absolute_path",
+      "gt_path",
+      "input_absolute_path"
+    ]
+  },
+  "real_pair_inference": {
+    "model_id": "q60_joint_tile4_no_global_ce",
+    "weights_sha256": "b84fdee76fb7961bb72bb3c063022fca7031f1f38790ec38b9b755df72ba165f",
+    "source": "data/ECIQA-Pref/scenes/MSEC_a0022-IMG_2380_N1/00_input.jpg",
+    "candidate": "data/ECIQA-Pref/scenes/MSEC_a0022-IMG_2380_N1/10_cotf_original.png",
+    "p_high": 0.7895060777664185,
+    "score_0_100": 78.95060777664185,
+    "quality_logit": 1.3219506740570068,
+    "logits_high_low": [
+      -2.6685385704040527,
+      -3.9904892444610596
+    ],
+    "precision": "fp32",
+    "view_count": 25,
+    "native_tile_count": 24,
+    "full_native_coverage": true,
+    "source_size": [
+      1282,
+      855
+    ],
+    "candidate_original_size": [
+      1282,
+      855
+    ],
+    "candidate_resized_to_input": false
+  },
+  "inference_scope": "One real MSEC test pair; execution check only, not a full metric evaluation.",
+  "acknowledgements_match_original": true,
+  "git_lfs_attributes_configured": true,
+  "new_commit_created": false,
+  "changes_staged": false,
+  "push_performed": false,
+  "manifest_schema_revision": {
+    "checked_at_utc": "2026-09-29T06:07:07.338241+00:00",
+    "status": "passed",
+    "columns_before": 24,
+    "columns_after": 12,
+    "removed_columns": [
+      "elo_centered",
+      "elo_raw",
+      "elo_shuffle_std",
+      "gt_filename",
+      "gt_height",
+      "gt_resize_required",
+      "gt_width",
+      "losses",
+      "pairwise_games",
+      "role",
+      "ties",
+      "wins"
+    ],
+    "rows_and_retained_values_unchanged": 5200,
+    "split_counts": {
+      "train": 4160,
+      "test": 1040
+    },
+    "previous_portable_manifest_sha256": "2146c9e65bc91aee1c47e0f9a7575737f09402a8776d1fe23d5e5a6dd9e00213",
+    "current_portable_manifest_sha256": "847b3a25e2f5c0e6e4b0c0e7d353409b6706dfea462fc40b813da60769d504d1",
+    "training_and_evaluation_samples": [
+      {
+        "split": "train",
+        "dataset": "MSEC",
+        "exposure": "under",
+        "image_id": "2f3c691277d4fca0",
+        "views": 5,
+        "all_sample_fields_exactly_equal": true
+      },
+      {
+        "split": "train",
+        "dataset": "MSEC",
+        "exposure": "over",
+        "image_id": "6892683c7443a435",
+        "views": 5,
+        "all_sample_fields_exactly_equal": true
+      },
+      {
+        "split": "train",
+        "dataset": "SICEV2",
+        "exposure": "under",
+        "image_id": "87f7c5ec92071468",
+        "views": 5,
+        "all_sample_fields_exactly_equal": true
+      },
+      {
+        "split": "train",
+        "dataset": "SICEV2",
+        "exposure": "over",
+        "image_id": "c6ec0a62d35dfeac",
+        "views": 5,
+        "all_sample_fields_exactly_equal": true
+      },
+      {
+        "split": "test",
+        "dataset": "MSEC",
+        "exposure": "under",
+        "image_id": "ad7f3f6b5debf5c6",
+        "views": 25,
+        "all_sample_fields_exactly_equal": true
+      },
+      {
+        "split": "test",
+        "dataset": "MSEC",
+        "exposure": "over",
+        "image_id": "f55fd3013364b9d5",
+        "views": 21,
+        "all_sample_fields_exactly_equal": true
+      },
+      {
+        "split": "test",
+        "dataset": "SICEV2",
+        "exposure": "under",
+        "image_id": "dcce2a7c47e89a5f",
+        "views": 29,
+        "all_sample_fields_exactly_equal": true
+      },
+      {
+        "split": "test",
+        "dataset": "SICEV2",
+        "exposure": "over",
+        "image_id": "b1af016480a8ede2",
+        "views": 29,
+        "all_sample_fields_exactly_equal": true
+      }
+    ],
+    "annotation_records_exactly_equal": 5200,
+    "annotation_javascript_byte_identical": true,
+    "historical_assembly_checks_below_use_the_previous_manifest": true,
+    "resume_note": "Existing training checkpoints bind the exact CSV hash. Resume an older run with its original manifest; the released inference and initialization weights do not bind the portable manifest hash."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "model_id": "q60_joint_tile4_no_global_ce",
+  "files": [
+    {
+      "filename": "eciqa_baseline_epoch015.pt",
+      "sha256": "b84fdee76fb7961bb72bb3c063022fca7031f1f38790ec38b9b755df72ba165f",
+      "bytes": 607481879,
+      "kind": "inference",
+      "epoch": 15,
+      "tensor_count": 397
+    },
+    {
+      "filename": "eciqa_stage2_init.pt",
+      "sha256": "09026d92ec096b8c7f17b7693c424f6a801a9830defdbe57d36d2f490150700f",
+      "bytes": 607492677,
+      "tensor_count": 397,
+      "seed": 2024,
+      "kind": "stage2_initialization",
+      "epoch": 0
+    }
+  ]
+}

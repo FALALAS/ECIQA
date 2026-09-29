@@ -1,0 +1,264 @@
+{
+  "model_id": "q60_joint_tile4_no_global_ce",
+  "date": "2026-09-29",
+  "scope": "All source/documentation/metadata files, excluding this index and Git internals. Binary assets are indexed separately below.",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 85,
+      "sha256": "e901afbf574e9baa621211bb1891f32e705de50c12804fd52fa32258c056da2e"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 440,
+      "sha256": "a1cacfc54b385e981ee4e51a2be917f08390f0c88706153343ecd3c81dda0d51"
+    },
+    {
+      "path": "annotation_tool/app.js",
+      "bytes": 25680,
+      "sha256": "9a7367c34789f363aa628eea53d36865ffb1f9fac4979307db1c579606efb374"
+    },
+    {
+      "path": "annotation_tool/group_csv_core.js",
+      "bytes": 27460,
+      "sha256": "aa7528bc54b9bc70038d0ea5853d1dd7797cd17e4054cf11d3f2a226c5385769"
+    },
+    {
+      "path": "annotation_tool/index.html",
+      "bytes": 5678,
+      "sha256": "f1b341ffbb677746518888cd21e0a493080ec0ff80b2ef702193e89fe4f6e342"
+    },
+    {
+      "path": "annotation_tool/label_core.js",
+      "bytes": 11241,
+      "sha256": "1898b96e3430480bf04a55bb2886a0a8d6e7889bd9e6a8f7373cc2f63759016c"
+    },
+    {
+      "path": "annotation_tool/review_app.js",
+      "bytes": 22928,
+      "sha256": "d85c102d374267f40e862add8b8b494161d3af2490d6da61010405a358e6d960"
+    },
+    {
+      "path": "annotation_tool/review.html",
+      "bytes": 5785,
+      "sha256": "bb9138c5334573a996ee236561f1d6505948144abb25480316639050fc5c2f4f"
+    },
+    {
+      "path": "annotation_tool/serve.py",
+      "bytes": 11792,
+      "sha256": "cc663f52b0cde550c762704a2e7724b28608098099c2651b97839e3b59744dc5"
+    },
+    {
+      "path": "annotation_tool/style.css",
+      "bytes": 6481,
+      "sha256": "9d0c4c9d760ad943515df0ca7640266ca1c60c43db51aad9e5f79eafcb9f2fd1"
+    },
+    {
+      "path": "annotation_tool/tests/browser_smoke.mjs",
+      "bytes": 57922,
+      "sha256": "d9d49b946bf803d746fcb2dff9090ceacc3d6c3fdb63813475934bb91f886d4b"
+    },
+    {
+      "path": "annotation_tool/tests/group_csv_core.test.mjs",
+      "bytes": 14731,
+      "sha256": "6fc7eaddbe937c6295e941a0e3558409995953214d90b974e0ad486d71ec9318"
+    },
+    {
+      "path": "annotation_tool/tests/label_core.test.mjs",
+      "bytes": 13527,
+      "sha256": "ce54f94103cfd77d843463b23b76af60070b044523b9e227d5ad629e4a295e3a"
+    },
+    {
+      "path": "annotation_tool/tests/test_server.py",
+      "bytes": 5702,
+      "sha256": "faf5416254d1edc5d776e85880687191e6e7788db3a3b898670fed15e9cfd6e3"
+    },
+    {
+      "path": "configs/baseline.json",
+      "bytes": 1057,
+      "sha256": "53661e76308abdaeb17f0b18f1d06b42d225fc35b07ff0379c90259341c172f0"
+    },
+    {
+      "path": "data/ECIQA-Pref/checksums.sha256",
+      "bytes": 641200,
+      "sha256": "be7611f36d39388224e1954758fce7fb888829e41bad8c6df75488b2ad0949c9"
+    },
+    {
+      "path": "data/ECIQA-Pref/manifest.csv",
+      "bytes": 1171935,
+      "sha256": "847b3a25e2f5c0e6e4b0c0e7d353409b6706dfea462fc40b813da60769d504d1"
+    },
+    {
+      "path": "data/ECIQA-Pref/metadata.json",
+      "bytes": 2814,
+      "sha256": "436333f53177d333ea5cc377b683b77144c340cc2d9832a795bb8a17239a7770"
+    },
+    {
+      "path": "data/ECIQA-Pref/splits/test.csv",
+      "bytes": 229818,
+      "sha256": "dd2d85bdc1dd66547dce5b3c987117da06d79df98f6a8f2b8cce442cfb65401e"
+    },
+    {
+      "path": "data/ECIQA-Pref/splits/train.csv",
+      "bytes": 942240,
+      "sha256": "3649b6d6c673ea3ef52ac9c44841c917b73fc7196624ca9c17cb37b33fbe82d3"
+    },
+    {
+      "path": "docs/annotation_tool_validation.json",
+      "bytes": 1785,
+      "sha256": "f47df3b7babffe7bb95a52b63e4530a9360486cb0ed161414de43022237d192f"
+    },
+    {
+      "path": "docs/checkpoint_provenance.json",
+      "bytes": 2235,
+      "sha256": "f6b40aee876cd4132f0e0b09eae15bf0615e55287752ad12eeb5c22fb6f581e3"
+    },
+    {
+      "path": "docs/historical_metrics.json",
+      "bytes": 816,
+      "sha256": "9b048ab76e6f819ea0f63bd7e44acff314935e8e25ae7e40daa7de877da45359"
+    },
+    {
+      "path": "docs/repository_validation.json",
+      "bytes": 5984,
+      "sha256": "e98d3e027881ebf15db6ff7f5c519aa389d660aa21c42aae74e3727add43178e"
+    },
+    {
+      "path": "docs/validation.json",
+      "bytes": 3745,
+      "sha256": "ba10dc21c0744e99930874f754a22676c3cf8c098771496f83ff08442885e110"
+    },
+    {
+      "path": "eciqa/__init__.py",
+      "bytes": 315,
+      "sha256": "01c1b1150e9f2f3475593ecddef317c0eb01f4b86a296cc33906365536c5a413"
+    },
+    {
+      "path": "eciqa/components.py",
+      "bytes": 5937,
+      "sha256": "58cce20c33e655c90913ddb7a5e437d9690845af3bc3b8368bdec75f37ff82f1"
+    },
+    {
+      "path": "eciqa/contract.py",
+      "bytes": 2806,
+      "sha256": "4c69742bcab4e1c049aaf43c63df97f6356a96e8d1df0a0d4ca055c7d0dd7d72"
+    },
+    {
+      "path": "eciqa/data.py",
+      "bytes": 11531,
+      "sha256": "ea3848cc18d0f76a695a8a003e4708d82a8efa0421d267b1a9e09b1777a2ee62"
+    },
+    {
+      "path": "eciqa/evaluate.py",
+      "bytes": 3249,
+      "sha256": "49b764752be7f2b00e8e4a3c658c67cce64a4245605322db1ca46fa772ed7bbb"
+    },
+    {
+      "path": "eciqa/infer.py",
+      "bytes": 2164,
+      "sha256": "5fa6e5170c1792d44fa779165780bed3ba54c5c5f1bb4c37d42d0b330ac60a80"
+    },
+    {
+      "path": "eciqa/inference.py",
+      "bytes": 10106,
+      "sha256": "cad99cd290d764f1b41ec4dbe179cc5c2036903f6f84590ae144fbbb1e80d81c"
+    },
+    {
+      "path": "eciqa/metrics.py",
+      "bytes": 6785,
+      "sha256": "06c987641e8b42e31f53d92370426d9c2e12fb0f036e214160fd04f6e9fa54a1"
+    },
+    {
+      "path": "eciqa/model.py",
+      "bytes": 11730,
+      "sha256": "32ce65231f7cf63eae432ebc0d5d21725f3bdb752ad7e7dae870c47244fd0d00"
+    },
+    {
+      "path": "eciqa/text_encoder.py",
+      "bytes": 996,
+      "sha256": "a85b756b0f9b78a632cd17dd24d8b225698a793df086f88cf03fd6cd662ae84a"
+    },
+    {
+      "path": "eciqa/train.py",
+      "bytes": 27376,
+      "sha256": "4a80dd580a01cdd63d61623db4e1dd4bd414a829c958eb09c07503448ecc2afb"
+    },
+    {
+      "path": "eciqa/vendor/__init__.py",
+      "bytes": 77,
+      "sha256": "c655d93d30f9eca97b1350e370e11f306701efcc4cd9264345bda84935cb0a57"
+    },
+    {
+      "path": "eciqa/vendor/clip_model.py",
+      "bytes": 31469,
+      "sha256": "a644daf7a2ca82ae7db7bbbf1e1417db0c776d85c1a9e9081c00b74b4a75a3ba"
+    },
+    {
+      "path": "eciqa/vendor/LICENSE_OpenAI_CLIP",
+      "bytes": 1064,
+      "sha256": "987e63b32f6c89ff5160e429458a872ff048e6860b590a3912e938f9da8f14db"
+    },
+    {
+      "path": "eciqa/vendor/LICENSE_Restormer.md",
+      "bytes": 1090,
+      "sha256": "2b93776512924bc095ec5d97a79d76cf1ab401ae641d1ae1f46e94f1c53a2e59"
+    },
+    {
+      "path": "eciqa/vendor/restormer_arch.py",
+      "bytes": 11428,
+      "sha256": "3be243fa3c8e2cb2c9459eeac062b04d6084dbcc328292dae1c3e52ba6f7434a"
+    },
+    {
+      "path": "examples/manifest.csv",
+      "bytes": 615,
+      "sha256": "9eed04a6391e459222911162d62432a76f5a6482f80373d9a8429b37c42b3c17"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 532,
+      "sha256": "69f54400a314a0aea73e7846459ff70387828f55e46dfd8ca2fc1b1a2517edfb"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8069,
+      "sha256": "66bd93b2e93ba5294a367a598be53d6bd8d290f6977a42d262747abc04fa493b"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 121,
+      "sha256": "3851da11e3bfa870e30cb86cb62ea104e0bc8d8a6810ecce365fd9575929aa5f"
+    },
+    {
+      "path": "scripts/verify_assets.py",
+      "bytes": 7662,
+      "sha256": "a5200cfa69922e5bc6174603990c020f0724e015a864dccfba38e31f839d6e45"
+    },
+    {
+      "path": "tests/test_contract.py",
+      "bytes": 3398,
+      "sha256": "ea24192bb5f6655652343bbab3dd3970e63a6341839968794c83634f0569677e"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 3663,
+      "sha256": "703bc44a763d62bd1c2c48ee4f842229ad98c94cab3fa558a740d1cd95416fdb"
+    },
+    {
+      "path": "weights/checksums.json",
+      "bytes": 599,
+      "sha256": "80f188bfd15b6e87922323bdb2e050bae2a6d194964e2c3a8cf4c0727eff25c2"
+    }
+  ],
+  "binary_assets": [
+    {
+      "index": "weights/checksums.json",
+      "count": 2,
+      "bytes": 1214974556
+    },
+    {
+      "index": "data/ECIQA-Pref/checksums.sha256",
+      "count": 5200,
+      "bytes": 3486811974
+    }
+  ]
+}

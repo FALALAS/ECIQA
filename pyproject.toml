@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eciqa-baseline"
+version = "0.1.0"
+description = "Paired exposure-correction image quality assessment baseline"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.0", "numpy>=1.23", "Pillow>=9.1", "einops>=0.6", "scipy>=1.9"]
+
+[project.scripts]
+eciqa-score = "eciqa.infer:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["eciqa*"]
+
+[tool.setuptools.package-data]
+eciqa = ["vendor/LICENSE*"]

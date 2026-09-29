@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ECIQA-Pref Annotation</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="comparisonWorkspace layout-landscape" id="comparisonWorkspace">
+      <section class="judgement">
+        <header class="topbar">
+          <div class="toolHeading">
+            <h1>ECIQA-Pref Annotation</h1>
+            <p id="metaText">Loading manifest...</p>
+            <a class="toolLink" href="./review.html" target="_blank" rel="noopener">Open review tool</a>
+          </div>
+          <div class="session">
+            <label for="expertId">
+              Expert ID
+              <input id="expertId" autocomplete="off" placeholder="e.g. e01">
+            </label>
+            <label for="groupId">
+              Group
+              <select id="groupId">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+              </select>
+            </label>
+            <div class="folderControl">
+              <span>Working folder</span>
+              <div class="folderRow">
+                <button id="workingFolderBtn" type="button">Choose Folder</button>
+                <span id="workingFolderStatus" role="status">No folder</span>
+              </div>
+            </div>
+            <label>
+              Dataset
+              <select id="datasetFilter">
+                <option value="all">All</option>
+                <option value="MSEC">MSEC</option>
+                <option value="SICEV2">SICEV2</option>
+              </select>
+            </label>
+            <label>
+              Pair mode
+              <select id="pairMode">
+                <option value="compact">Compact</option>
+                <option value="unseen">Unseen</option>
+                <option value="all">All pairs</option>
+                <option value="marked">Marked only</option>
+              </select>
+            </label>
+            <label>
+              Trials
+              <input id="maxTrials" type="number" min="1" step="1" value="80">
+            </label>
+            <label>
+              Seed
+              <input id="seedText" autocomplete="off" placeholder="scene-order for original order">
+            </label>
+            <button id="startBtn" type="button" disabled>Start</button>
+          </div>
+        </header>
+
+        <section class="statusbar">
+          <div id="progressText">Not started</div>
+          <div id="sceneText"></div>
+          <div class="actions">
+            <button id="comparisonMarkBtn" type="button" aria-pressed="false" disabled>Mark Comparison</button>
+            <button id="prevBtn" type="button" disabled>Prev</button>
+            <button id="nextBtn" type="button" disabled>Save & Next</button>
+            <button id="exportCsvBtn" type="button" disabled>Export CSV</button>
+            <button id="exportJsonBtn" type="button" disabled>Export JSON</button>
+            <button id="clearBtn" type="button" disabled>Clear Session</button>
+          </div>
+        </section>
+
+        <div class="choiceRow" data-key="input_vs_a">
+          <span>Input vs A</span>
+          <button type="button" data-value="left">Input better</button>
+          <button type="button" data-value="similar">Similar</button>
+          <button type="button" data-value="right">A better</button>
+        </div>
+        <div class="choiceRow" data-key="input_vs_b">
+          <span>Input vs B</span>
+          <button type="button" data-value="left">Input better</button>
+          <button type="button" data-value="similar">Similar</button>
+          <button type="button" data-value="right">B better</button>
+        </div>
+        <div class="choiceRow" data-key="a_vs_b">
+          <span>A vs B</span>
+          <button type="button" data-value="left">A better</button>
+          <button type="button" data-value="similar">Similar</button>
+          <button type="button" data-value="right">B better</button>
+        </div>
+        <div class="rankingBox">
+          <span>Current ranking</span>
+          <strong id="rankingText">Choose all three comparisons</strong>
+        </div>
+      </section>
+
+      <div class="imageSlot inputPanel">
+        <article class="panel" data-label="Input">
+          <div class="panelHead">
+            <strong>Input</strong>
+          </div>
+          <div class="imageBox">
+            <img id="inputImage" alt="Input image">
+            <div class="lens" id="lensInput"></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="imageSlot candidateAPanel">
+        <article class="panel" data-label="A">
+          <div class="panelHead">
+            <strong>Candidate A</strong>
+          </div>
+          <div class="imageBox">
+            <img id="aImage" alt="Candidate A">
+            <div class="lens" id="lensA"></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="imageSlot candidateBPanel">
+        <article class="panel" data-label="B">
+          <div class="panelHead">
+            <strong>Candidate B</strong>
+          </div>
+          <div class="imageBox">
+            <img id="bImage" alt="Candidate B">
+            <div class="lens" id="lensB"></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="./manifest.js"></script>
+  <script src="./label_core.js"></script>
+  <script src="./group_csv_core.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

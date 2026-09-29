@@ -1,0 +1,101 @@
+{
+  "name": "ECIQA-Pref historical model-training snapshot",
+  "source_manifest_filename": "images_elo_1040_20260830.csv",
+  "source_manifest_sha256": "6850b5d4c1fc5f4ad92d7a2e7e1b32f8411ceb632655a779a5b5d64d14845af0",
+  "portable_manifest_sha256": "847b3a25e2f5c0e6e4b0c0e7d353409b6706dfea462fc40b813da60769d504d1",
+  "frozen_image_hashes_sha256": "217cba6d9c8ca73693c847329ce3a2bd8f1a3bd65033ece0b409de1d54ee0de9",
+  "image_checksum_file_sha256": "be7611f36d39388224e1954758fce7fb888829e41bad8c6df75488b2ad0949c9",
+  "images": 5200,
+  "scenes": 1040,
+  "image_bytes": 3486811974,
+  "train_images": 4160,
+  "test_images": 1040,
+  "scene_counts": {
+    "train": 832,
+    "test": 208
+  },
+  "dataset_image_counts": {
+    "MSEC": 4900,
+    "SICEV2": 300
+  },
+  "scene_exposure_counts": {
+    "under": 507,
+    "over": 533
+  },
+  "split_scene_exposure_counts": {
+    "train_under": 403,
+    "train_over": 429,
+    "test_over": 104,
+    "test_under": 104
+  },
+  "source_content_overlap_count": 84,
+  "split_unit": "exposure-instance scene_id",
+  "label_column": "elo_scene_0_100",
+  "label_range": [
+    0,
+    100
+  ],
+  "label_semantics": "scene-relative preference, not globally calibrated MOS",
+  "retained_columns": [
+    "image_id",
+    "dataset",
+    "scene_id",
+    "content_id",
+    "split",
+    "method",
+    "relative_path",
+    "input_relative_path",
+    "width",
+    "height",
+    "elo_scene_0_100",
+    "exposure"
+  ],
+  "removed_columns": [
+    "absolute_path",
+    "elo_centered",
+    "elo_raw",
+    "elo_shuffle_std",
+    "gt_filename",
+    "gt_height",
+    "gt_path",
+    "gt_resize_required",
+    "gt_width",
+    "input_absolute_path",
+    "losses",
+    "pairwise_games",
+    "role",
+    "ties",
+    "wins"
+  ],
+  "added_columns": [
+    "exposure"
+  ],
+  "exposure_provenance": "Existing frozen scene metadata; checked against original preparation code's exposure_type rule",
+  "copy_validation": {
+    "images_verified_against_frozen_sha256": 5200,
+    "mismatches": 0
+  },
+  "privacy": "No raw annotator IDs, timestamps, accounts, private absolute paths, or raw voting exports are included.",
+  "ground_truth_images_included": false,
+  "source_data_and_annotations_modified": false,
+  "manifest_schema_revision": {
+    "version": 2,
+    "date": "2026-09-29",
+    "previous_portable_manifest_sha256": "2146c9e65bc91aee1c47e0f9a7575737f09402a8776d1fe23d5e5a6dd9e00213",
+    "removed_unused_columns": [
+      "elo_centered",
+      "elo_raw",
+      "elo_shuffle_std",
+      "gt_filename",
+      "gt_height",
+      "gt_resize_required",
+      "gt_width",
+      "losses",
+      "pairwise_games",
+      "role",
+      "ties",
+      "wins"
+    ],
+    "retained_values_and_row_order_unchanged": true
+  }
+}

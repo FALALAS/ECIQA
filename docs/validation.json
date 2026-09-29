@@ -1,0 +1,134 @@
+{
+  "date": "2026-09-24",
+  "status": "passed",
+  "public_contract_tests": 6,
+  "environment": {
+    "python": "3.9.19",
+    "torch": "2.4.1+cu118",
+    "device": "NVIDIA TITAN Xp COLLECTORS EDITION",
+    "precision": "fp32"
+  },
+  "model_parity": {
+    "status": "passed",
+    "device": "cuda:0",
+    "torch_version": "2.4.1+cu118",
+    "tensor_count": 397,
+    "export_sha256_verified": true,
+    "original_source_sha256_verified": true,
+    "parity": [
+      {
+        "case": "odd_boundary",
+        "views": 5,
+        "native_tiles": 4,
+        "source_size": [
+          319,
+          237
+        ],
+        "max_absolute_differences": {
+          "prediction": 0.0,
+          "quality_logit": 0.0,
+          "quality_logits": 0.0,
+          "fused_embedding": 0.0
+        },
+        "p_high": 0.23610351979732513
+      },
+      {
+        "case": "candidate_resize",
+        "views": 5,
+        "native_tiles": 4,
+        "source_size": [
+          319,
+          237
+        ],
+        "max_absolute_differences": {
+          "prediction": 0.0,
+          "quality_logit": 0.0,
+          "quality_logits": 0.0,
+          "fused_embedding": 0.0
+        },
+        "p_high": 0.23899084329605103
+      },
+      {
+        "case": "msec_under",
+        "views": 25,
+        "native_tiles": 24,
+        "source_size": [
+          1277,
+          850
+        ],
+        "max_absolute_differences": {
+          "prediction": 0.0,
+          "quality_logit": 0.0,
+          "quality_logits": 0.0,
+          "fused_embedding": 0.0
+        },
+        "p_high": 0.6202864646911621
+      }
+    ],
+    "trainable_parameters": 2116433,
+    "frozen_tensors_unchanged": 304,
+    "updated_trainable_tensors": 90,
+    "smoke_loss": 0.6113966107368469,
+    "gradient_groups_checked": [
+      "qmap",
+      "VPT",
+      "text_context",
+      "cross_attention",
+      "fusion_projection"
+    ],
+    "note": "FP32 inference parity and one update verified; historical full-test metrics inherited, not rerun."
+  },
+  "real_model_cli_training": {
+    "status": "smoke_completed",
+    "epochs": 1,
+    "images": 2,
+    "optimizer_steps": 1,
+    "synthetic_data_only": true,
+    "restored_initialization_rng": true
+  },
+  "cli_inference": {
+    "passed": true,
+    "native_tile_count": 1,
+    "full_native_coverage": true
+  },
+  "cli_evaluation": {
+    "passed": true,
+    "count": 2,
+    "synthetic_data_only": true
+  },
+  "training_resume": {
+    "status": "passed",
+    "device": "cpu",
+    "scope": "train.run end-to-end with mocked model and dataset; original loader, loss, optimizer, scheduler, evaluation and checkpoint code",
+    "comparison": "2 uninterrupted epochs vs pause after epoch 1 + full resume to epoch 2",
+    "exact_equal": [
+      "model",
+      "optimizer",
+      "scheduler",
+      "scaler",
+      "rng_state",
+      "best",
+      "run_signature",
+      "epoch losses",
+      "epoch evaluations"
+    ],
+    "torch_load_weights_only": true,
+    "train_images_per_epoch": 7,
+    "accumulation": 3,
+    "optimizer_steps_per_epoch": 3,
+    "selection_split": "val",
+    "cosine_T_max": 100,
+    "rng_coverage": [
+      "Python",
+      "NumPy",
+      "torch dropout",
+      "DataLoader shuffle generator"
+    ],
+    "limitations": "No large-model/CUDA/kernel equivalence claim; wall-clock fields intentionally excluded"
+  },
+  "limitations": [
+    "Full historical test set was not rerun during packaging.",
+    "BF16 and FP16 equivalence were not tested on this machine.",
+    "End-to-end exact resume was verified with a small CPU mock model; the real model received a separate CUDA training smoke test."
+  ]
+}

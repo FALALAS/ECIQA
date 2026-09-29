@@ -1,0 +1,416 @@
+:root {
+  color-scheme: light;
+  --bg: #f3f5f7;
+  --panel: #ffffff;
+  --line: #d8dee7;
+  --text: #17202a;
+  --muted: #5b6777;
+  --accent: #0b6bcb;
+  --accent-weak: #dcecff;
+  --danger: #b42318;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--text);
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+  padding: 14px;
+}
+
+.judgement {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.topbar {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  align-items: start;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 20px;
+}
+
+.toolHeading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 12px;
+}
+
+.toolHeading h1 {
+  flex-basis: 100%;
+}
+
+.toolLink {
+  color: var(--accent);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.session {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: end;
+  justify-content: flex-start;
+}
+
+.folderControl {
+  display: grid;
+  gap: 4px;
+  min-width: 180px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.folderRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 34px;
+}
+
+.folderRow button {
+  flex: 0 0 auto;
+  padding: 7px 9px;
+}
+
+#workingFolderStatus {
+  min-width: 0;
+  max-width: 150px;
+  overflow: hidden;
+  color: var(--text);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#workingFolderStatus[data-state="error"] {
+  color: var(--danger);
+}
+
+label {
+  display: grid;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+input,
+select {
+  min-width: 95px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 7px 8px;
+  background: #fff;
+  color: var(--text);
+}
+
+.statusbar {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 8px 12px;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+#progressText {
+  font-weight: 700;
+}
+
+#sceneText {
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+#comparisonMarkBtn.marked {
+  border-color: #a15c00;
+  background: #fff4d6;
+  color: #6b3e00;
+  font-weight: 700;
+}
+
+#reviewedBtn.reviewed {
+  border-color: #137333;
+  background: #e6f4ea;
+  color: #0d5425;
+  font-weight: 700;
+}
+
+.comparisonWorkspace {
+  min-width: 0;
+  min-height: 0;
+  height: calc(100vh - 28px);
+  display: grid;
+  gap: 12px;
+}
+
+.layout-landscape {
+  min-height: 620px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-template-areas:
+    "judgement input"
+    "candidate-a candidate-b";
+}
+
+.layout-portrait {
+  min-height: 620px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-areas:
+    "judgement judgement judgement"
+    "input candidate-a candidate-b";
+}
+
+.judgement {
+  grid-area: judgement;
+}
+
+.inputPanel {
+  grid-area: input;
+}
+
+.candidateAPanel {
+  grid-area: candidate-a;
+}
+
+.candidateBPanel {
+  grid-area: candidate-b;
+}
+
+.imageSlot {
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.panel {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  background: var(--panel);
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px var(--line);
+  overflow: hidden;
+}
+
+.panelHead {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 5;
+  width: max-content;
+  max-width: calc(100% - 16px);
+  display: flex;
+  align-items: center;
+  padding: 5px 8px;
+  border-radius: 4px;
+  background: rgba(10, 14, 18, 0.76);
+  color: #fff;
+}
+
+.imageBox {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  overflow: hidden;
+}
+
+.imageBox img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.lens {
+  display: none;
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+  border-radius: 6px;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  z-index: 4;
+}
+
+.lens.active {
+  display: block;
+}
+
+.judgement {
+  display: grid;
+  gap: 10px;
+  align-items: stretch;
+  min-width: 0;
+}
+
+.layout-landscape .judgement {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: start;
+  min-height: 0;
+  overflow: auto;
+}
+
+.layout-portrait .judgement {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(190px, 1.2fr);
+}
+
+.choiceRow,
+.rankingBox {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  padding: 8px;
+}
+
+.choiceRow {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-content: center;
+}
+
+.rankingBox {
+  align-content: center;
+  border-top: 1px solid var(--line);
+}
+
+.choiceRow > span {
+  grid-column: 1 / -1;
+}
+
+.choiceRow button {
+  min-width: 0;
+  padding: 8px 6px;
+  white-space: normal;
+}
+
+.choiceRow span,
+.rankingBox span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.choiceRow button.selected {
+  border-color: var(--accent);
+  background: var(--accent-weak);
+  color: #053d75;
+  font-weight: 700;
+}
+
+.rankingBox strong {
+  align-self: center;
+  font-size: 18px;
+}
+
+.rankingBox.conflict strong {
+  color: var(--danger);
+}
+
+@media (max-width: 1100px) {
+  .topbar,
+  .statusbar {
+    grid-template-columns: 1fr;
+  }
+
+  .session,
+  .actions {
+    justify-content: flex-start;
+  }
+
+  .comparisonWorkspace,
+  .layout-landscape,
+  .layout-portrait {
+    height: auto;
+    min-height: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "judgement"
+      "input"
+      "candidate-a"
+      "candidate-b";
+  }
+
+  .layout-landscape .judgement,
+  .layout-portrait .judgement {
+    grid-template-columns: 1fr;
+  }
+
+  .imageSlot {
+    height: 48vh;
+    min-height: 320px;
+    max-height: 680px;
+  }
+}
