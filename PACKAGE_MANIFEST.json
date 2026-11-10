@@ -170,8 +170,8 @@
     },
     {
       "path": "eciqa/model.py",
-      "bytes": 11730,
-      "sha256": "32ce65231f7cf63eae432ebc0d5d21725f3bdb752ad7e7dae870c47244fd0d00"
+      "bytes": 11844,
+      "sha256": "53d7b4cc9b30b1350b03b1feadcff74859a42f2ababffc91bca87bb04830096b"
     },
     {
       "path": "eciqa/text_encoder.py",

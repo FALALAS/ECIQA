@@ -119,6 +119,8 @@ class ExperimentModel(nn.Module):
         self.text_encoder = student.text_encoder
         self.ctx = student.prompt_learner2.ctx
         self.logit_scale = student.logit_scale
+        # Preserve all three template pairs for strict checkpoint compatibility.
+        # Scoring uses only the exposure-free high/low quality pair at index 2.
         templates = []
         for prefix in ("underexposure ", "overexposure ", ""):
             templates.append(torch.cat([clip_module.tokenize(f"X X X X {prefix}{quality}.")
@@ -152,8 +154,8 @@ class ExperimentModel(nn.Module):
     def visual_forward(self, rgb, mask):
         return self.visual((rgb - self.image_mean) / self.image_std, mask, self.ctx)
 
-    def text_features(self, exposure=None, condition=None):
-        # Exposure metadata does not select a template in the released model.
+    def text_features(self):
+        """Encode learned context plus high/low quality, without exposure prompts."""
         tokens = self.quality_tokens[2]
         embedded = self.text_encoder.token_embedding(tokens)
         prompts = torch.cat((embedded[:, :1], self.ctx[None].expand(2, -1, -1), embedded[:, 5:]), 1)
@@ -217,7 +219,7 @@ class ExperimentModel(nn.Module):
         weights = area / area.sum().clamp_min(1)
         local_feature = (pooled * weights[:, None]).sum(0, keepdim=True)
         fused = F.normalize(self.fusion_projection(local_feature), dim=-1)
-        quality_text = self.text_features(sample["exposure"], None)
+        quality_text = self.text_features()
         logits = (self.logit_scale.clamp(max=math.log(100)).exp() * fused @ quality_text.T).float()
         return {"prediction": logits.softmax(-1)[0, 0],
                 "quality_logit": logits[0, 0] - logits[0, 1],
