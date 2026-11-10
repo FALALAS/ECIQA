@@ -1,6 +1,6 @@
 # Beyond Ground-Truth Fidelity: Rethinking Exposure Correction through Input-Conditioned Perceptual Evaluation
 
-**Ao Li, Zhenyu Wang<sup>†</sup>, Aobo Li, Tao Huang, Yufan Zhu, Fangfang Wu, Jinjian Wu, Weisheng Dong<sup>†</sup>**
+**Ao Li, Zhenyu Wang<sup>†</sup>, Aobo Li, Zhenqi Fu, Tao Huang, Yufan Zhu, Fangfang Wu, Jinjian Wu, Weisheng Dong<sup>†</sup>**
 
 Xidian University
 
